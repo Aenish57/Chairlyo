@@ -12,9 +12,13 @@
   "type": "commonjs",
   "devDependencies": {
     "cypress": "^16.0.0",
+    "cypress-mochawesome-reporter": "^5.0.0",
     "cypress-xpath": "^2.0.1"
   },
   "dependencies": {
     "dotenv": "^17.4.2"
+  },
+  "allowScripts": {
+    "cypress@16.0.0": true
   }
 }

@@ -1,0 +1,203 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-16T05:21:38.501Z",
+    "end": "2026-09-16T05:22:13.825Z",
+    "duration": 35324,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2f37eebe-3e60-4c7b-aefa-c39c61605685",
+      "title": "",
+      "fullFile": "cypress\\e2e\\05_SearchBranches.cy.js",
+      "file": "cypress\\e2e\\05_SearchBranches.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ab27bdc8-b746-4573-b32a-fdc6143efc8e",
+          "title": "Search functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify branch can be searched by valid name",
+              "fullTitle": "Search functionality Verify branch can be searched by valid name",
+              "timedOut": null,
+              "duration": 7021,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(_locator.search.SearchField).type(\"Beauty Salon\");\ncy.get(\"body\").should(\"contain.text\", \"Beauty Salon\");",
+              "err": {},
+              "uuid": "42eda2bb-0f63-4d6f-82e7-dca5488d2e4e",
+              "parentUUID": "ab27bdc8-b746-4573-b32a-fdc6143efc8e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify branch can be searched with partial name",
+              "fullTitle": "Search functionality Verify branch can be searched with partial name",
+              "timedOut": null,
+              "duration": 5489,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(_locator.search.SearchField).type(\"1788674289454\");\ncy.get(\"body\").should(\"contain.text\", \"Beauty Salon\");",
+              "err": {},
+              "uuid": "75618226-1fe5-451f-aa3e-88747dc7d5ba",
+              "parentUUID": "ab27bdc8-b746-4573-b32a-fdc6143efc8e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify search with non-existing branch name",
+              "fullTitle": "Search functionality Verify search with non-existing branch name",
+              "timedOut": null,
+              "duration": 5915,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(_locator.search.SearchField).type(\"doesnotexist\");\ncy.get(\"body\").should(\"contain.text\", \"Sorry\");",
+              "err": {},
+              "uuid": "45ca053b-0ec3-4384-9da2-579f8e315979",
+              "parentUUID": "ab27bdc8-b746-4573-b32a-fdc6143efc8e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify search with numbers",
+              "fullTitle": "Search functionality Verify search with numbers",
+              "timedOut": null,
+              "duration": 5266,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(_locator.search.SearchField).type(\"9774223642\");\ncy.get(\"body\").should(\"contain.text\", \"977\");",
+              "err": {},
+              "uuid": "ae2633cc-aefd-4c41-b4f2-7dfbc2dc9965",
+              "parentUUID": "ab27bdc8-b746-4573-b32a-fdc6143efc8e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify search with special characters",
+              "fullTitle": "Search functionality Verify search with special characters",
+              "timedOut": null,
+              "duration": 5952,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(_locator.search.SearchField).type(\"@#$%^&\");\ncy.get(\"body\").should(\"contain.text\", \"Sorry\");",
+              "err": {},
+              "uuid": "c2aaeb29-0339-490f-a9e0-c2c410ce31b0",
+              "parentUUID": "ab27bdc8-b746-4573-b32a-fdc6143efc8e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify search is case-insensitive",
+              "fullTitle": "Search functionality Verify search is case-insensitive",
+              "timedOut": null,
+              "duration": 5326,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(_locator.search.SearchField).type(\"Edited Salon 1788674289454\");\ncy.get(\"body\").should(\"contain.text\", \"Beauty Salon\");",
+              "err": {},
+              "uuid": "f2ccff00-4b8f-489c-b966-f5ab07e7fcc8",
+              "parentUUID": "ab27bdc8-b746-4573-b32a-fdc6143efc8e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "42eda2bb-0f63-4d6f-82e7-dca5488d2e4e",
+            "75618226-1fe5-451f-aa3e-88747dc7d5ba",
+            "45ca053b-0ec3-4384-9da2-579f8e315979",
+            "ae2633cc-aefd-4c41-b4f2-7dfbc2dc9965",
+            "c2aaeb29-0339-490f-a9e0-c2c410ce31b0",
+            "f2ccff00-4b8f-489c-b966-f5ab07e7fcc8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 34969,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -30,7 +30,7 @@ const FirstName = `First${uniqueId}`;
 const LastName = `Last${uniqueId}`;
 const BranchEmail = `branch${uniqueId}@test.com`;
 const AdminEmail = `admin${uniqueId}@test.com`;
-const Phone = "97" + String(uniqueId).slice(-8);
+const Phone = "977" + '98' + String(uniqueId).slice(-8);
 const Password = "Password@123";
 
 
@@ -43,7 +43,9 @@ it("Verify Branch CRUD Functionality", () => {
   // 4.2 Create branch
   cy.get(branchlocator.BranchName).type(BranchName);
   cy.get(branchlocator.Slug).type(Slug);
-  cy.get(branchlocator.BranchPhone).eq(0).clear().type("+977").type(Phone);
+  cy.log(`Phone: ${Phone}`);
+  cy.log(`Phone length: ${Phone.length}`);
+  cy.get(branchlocator.BranchPhone).eq(0).clear().type("Nepal").type(Phone);
   cy.get(branchlocator.BranchEmail).type(BranchEmail);
 
   cy.xpath(branchlocator.Status).click();
@@ -63,7 +65,9 @@ it("Verify Branch CRUD Functionality", () => {
   cy.get(branchlocator.LastName).type(LastName);
   cy.get(branchlocator.AdminEmail).type(AdminEmail);
   cy.get(branchlocator.Password).type(Password);
-  cy.get(branchlocator.AdminPhone).eq(1).clear().type("+977").type(Phone);
+  cy.log(`Phone: ${Phone}`);
+  cy.log(`Phone length: ${Phone.length}`);
+  cy.get(branchlocator.AdminPhone).eq(1).clear().type("Nepal").type(Phone);
 
   cy.xpath(branchlocator.CreateBranch).click();
 
@@ -89,9 +93,16 @@ it("Verify Branch CRUD Functionality", () => {
     .type(`Edited Salon ${uniqueId}`);
 
   cy.get("body").should("contain.text", `Edited Salon ${uniqueId}`);
+  // Select the branch checkbox
+  cy.xpath(
+  `//tbody/tr[contains(., "Edited Salon ${uniqueId}")]//button[@aria-label="Select row"]`
+  ).click({ force: true });
+  cy.xpath('//button[normalize-space()="Delete"]')
+  .should("be.visible")
+  .click({ force: true });
 
-  cy.xpath(branchlocator.DeleteBranch).first().click({ force: true });
-  cy.wait(1000);
+  // cy.xpath(branchlocator.DeleteBranch).first().click({ force: true });
+  // cy.wait(1000);
   cy.xpath(branchlocator.ConfirmDelete).type("Delete Branch");
 
   cy.xpath(branchlocator.Delete).click();

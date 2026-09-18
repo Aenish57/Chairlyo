@@ -1,0 +1,112 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-09-16T04:30:57.402Z",
+    "end": "2026-09-16T04:31:08.221Z",
+    "duration": 10819,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "54a5773e-4350-467b-9af9-ed7dccdd1b67",
+      "title": "",
+      "fullFile": "cypress\\e2e\\03_Add-branch.cy.js",
+      "file": "cypress\\e2e\\03_Add-branch.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "78bfeab9-c45a-45fe-9300-ce841efac058",
+          "title": "Add Branch",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should open Add Branch section",
+              "fullTitle": "Add Branch Should open Add Branch section",
+              "timedOut": null,
+              "duration": 10594,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\03_Add-branch.cy.js\\\\Add Branch -- Should open Add Branch section (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.visit('/login');\ncy.get('#email').type('skilladmin@test.com');\ncy.get(\"input[name='password']\").type('Skill@123');\ncy.get(\"button[type='submit']\").click();\ncy.contains(\"button\", \"Add Branch\").filter(\":visible\").first().click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Add Branch' within the selector: 'button' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Add Branch' within the selector: 'button' but never did.\n    at Context.eval (webpack://chairlyo/./cypress/e2e/03_Add-branch.cy.js:12:7)",
+                "diff": null
+              },
+              "uuid": "729f4cad-8bfe-451e-9559-320a29423dc4",
+              "parentUUID": "78bfeab9-c45a-45fe-9300-ce841efac058",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "729f4cad-8bfe-451e-9559-320a29423dc4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10594,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

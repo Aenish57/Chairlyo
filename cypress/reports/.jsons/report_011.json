@@ -1,0 +1,165 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-16T04:30:30.742Z",
+    "end": "2026-09-16T04:30:55.416Z",
+    "duration": 24674,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3bc39869-fcfb-43ed-8d20-b26b07721c27",
+      "title": "",
+      "fullFile": "cypress\\e2e\\02_admindashbard.cy.js",
+      "file": "cypress\\e2e\\02_admindashbard.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2df75c53-e86e-408f-a30c-dc54afa0b7ea",
+          "title": "It verify dashboard of adminn",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "It verify dashboard of admin after logged in",
+              "fullTitle": "It verify dashboard of adminn It verify dashboard of admin after logged in",
+              "timedOut": null,
+              "duration": 5495,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"body\").should(\"contain.text\", \"Branch\");",
+              "err": {},
+              "uuid": "c07641c6-eabb-433f-a8d5-e18ee6b2981f",
+              "parentUUID": "2df75c53-e86e-408f-a30c-dc54afa0b7ea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify sidebar navigation",
+              "fullTitle": "It verify dashboard of adminn Verify sidebar navigation",
+              "timedOut": null,
+              "duration": 6378,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(_locator.dashboardlocator.SiderBarMenu).click();\ncy.xpath(_locator.dashboardlocator.BranchMenu).click();\ncy.get(\"body\").should(\"contain.text\", \"Branches\");",
+              "err": {},
+              "uuid": "75251a3a-3047-497c-a6f4-567d98c2131a",
+              "parentUUID": "2df75c53-e86e-408f-a30c-dc54afa0b7ea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Add Branch opens from dashboard",
+              "fullTitle": "It verify dashboard of adminn Verify Add Branch opens from dashboard",
+              "timedOut": null,
+              "duration": 5186,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(_locator.dashboardlocator.AddBranch).click({\n  force: true\n});\ncy.get(\"body\").should(\"contain.text\", \"Add Branches\");",
+              "err": {},
+              "uuid": "78dc6d5a-f293-45fe-8594-2dbd21d64dd0",
+              "parentUUID": "2df75c53-e86e-408f-a30c-dc54afa0b7ea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Logout from dashboard",
+              "fullTitle": "It verify dashboard of adminn Verify Logout from dashboard",
+              "timedOut": null,
+              "duration": 7408,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".flex.items-center.rounded-xl.cursor-pointer\").eq(10).click();\ncy.xpath(_locator.dashboardlocator.LogoutButton).click();\ncy.get('button[data-variant=\"delete\"]').click();\ncy.get(\"body\").should(\"contain.text\", \"Welcome back\");",
+              "err": {},
+              "uuid": "e6e30ff0-4a4a-4505-ae7d-ee98a8c134d7",
+              "parentUUID": "2df75c53-e86e-408f-a30c-dc54afa0b7ea",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c07641c6-eabb-433f-a8d5-e18ee6b2981f",
+            "75251a3a-3047-497c-a6f4-567d98c2131a",
+            "78dc6d5a-f293-45fe-8594-2dbd21d64dd0",
+            "e6e30ff0-4a4a-4505-ae7d-ee98a8c134d7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24467,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

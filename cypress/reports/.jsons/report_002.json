@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-16T04:25:08.800Z",
+    "end": "2026-09-16T04:25:15.686Z",
+    "duration": 6886,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4dcaa129-c82d-4f63-ba88-b57ee7771eb1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\03_Add-branch.cy.js",
+      "file": "cypress\\e2e\\03_Add-branch.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e8ddd4d9-f1ed-42ed-b92e-da2ae33c8974",
+          "title": "Add Branch",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should open Add Branch section",
+              "fullTitle": "Add Branch Should open Add Branch section",
+              "timedOut": null,
+              "duration": 6831,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/login');\ncy.get('#email').type('skilladmin@test.com');\ncy.get(\"input[name='password']\").type('Skill@123');\ncy.get(\"button[type='submit']\").click();\ncy.contains(\"button\", \"Add Branch\").filter(\":visible\").first().click();",
+              "err": {},
+              "uuid": "f884bf7f-f0d6-48a6-bcdf-84b23d57992f",
+              "parentUUID": "e8ddd4d9-f1ed-42ed-b92e-da2ae33c8974",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f884bf7f-f0d6-48a6-bcdf-84b23d57992f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6831,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

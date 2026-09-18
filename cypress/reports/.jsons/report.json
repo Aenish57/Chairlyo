@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-16T04:24:43.105Z",
+    "end": "2026-09-16T04:24:51.821Z",
+    "duration": 8716,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "36d8c34d-c55d-4874-8a3d-c1fec4ae73d3",
+      "title": "",
+      "fullFile": "cypress\\e2e\\01_login.cy.js",
+      "file": "cypress\\e2e\\01_login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "29c08b5f-c581-43e8-ba29-e2e7b23a5d81",
+          "title": "Chairlyo Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should Login with valid credential",
+              "fullTitle": "Chairlyo Login Should Login with valid credential",
+              "timedOut": null,
+              "duration": 8580,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_locator.loginlocator.email).type(\"skilladmin@test.com\");\ncy.get(_locator.loginlocator.password).type(\"Skill@123\");\ncy.xpath(_locator.loginlocator.login).click();\ncy.url().should(\"eq\", \"https://qa02.stage.chairlyo.com/\");",
+              "err": {},
+              "uuid": "fcf2f21a-b259-4f57-8f02-488c942b5848",
+              "parentUUID": "29c08b5f-c581-43e8-ba29-e2e7b23a5d81",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fcf2f21a-b259-4f57-8f02-488c942b5848"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8580,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-09-16T05:21:07.526Z",
+    "end": "2026-09-16T05:21:36.454Z",
+    "duration": 28928,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fd48868f-90db-40b1-9c02-0ff8e93af92e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\04_BranchLogin.cy.js",
+      "file": "cypress\\e2e\\04_BranchLogin.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d2d2fe3d-eda7-4344-b767-9c923c2d6c3a",
+          "title": "Branch Add functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Branch CRUD Functionality",
+              "fullTitle": "Branch Add functionality Verify Branch CRUD Functionality",
+              "timedOut": null,
+              "duration": 26502,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\04_BranchLogin.cy.js\\\\Branch Add functionality -- Verify Branch CRUD Functionality (failed).png\"\n    ]\n  ]\n}",
+              "code": "// 4.1 Navigate to Add Branch\ncy.xpath(_locator.branchlocator.AddBranch).click({\n  force: true\n});\ncy.url().should(\"include\", \"/branches/add\");\n// 4.2 Create branch\ncy.get(_locator.branchlocator.BranchName).type(BranchName);\ncy.get(_locator.branchlocator.Slug).type(Slug);\ncy.log(`Phone: ${Phone}`);\ncy.log(`Phone length: ${Phone.length}`);\ncy.get(_locator.branchlocator.BranchPhone).eq(0).clear().type(\"Nepal\").type(Phone);\ncy.get(_locator.branchlocator.BranchEmail).type(BranchEmail);\ncy.xpath(_locator.branchlocator.Status).click();\ncy.get('button[role=\"combobox\"]').filter(':has(span[data-slot=\"select-value\"])').then($btn => {\n  if ($btn.attr(\"aria-expanded\") === \"false\") {\n    cy.wrap($btn).click();\n  }\n});\ncy.get('[role=\"option\"]').contains(/^Active$/).click({\n  force: true\n});\ncy.get(_locator.branchlocator.Address).type(\"Kathmandu, Nepal\");\ncy.get(_locator.branchlocator.FirstName).type(FirstName);\ncy.get(_locator.branchlocator.LastName).type(LastName);\ncy.get(_locator.branchlocator.AdminEmail).type(AdminEmail);\ncy.get(_locator.branchlocator.Password).type(Password);\ncy.log(`Phone: ${Phone}`);\ncy.log(`Phone length: ${Phone.length}`);\ncy.get(_locator.branchlocator.AdminPhone).eq(1).clear().type(\"Nepal\").type(Phone);\ncy.xpath(_locator.branchlocator.CreateBranch).click();\ncy.get(\"body\").should(\"contain.text\", BranchName);\n// 4.3 Edit branch\ncy.xpath(_locator.search.SearchField).type(BranchName);\ncy.get(\"body\").should(\"contain.text\", BranchName);\ncy.xpath(_locator.branchlocator.EditBranch).click({\n  force: true\n});\ncy.get(\"body\").should(\"contain.text\", \"Save Changes\");\ncy.get(_locator.branchlocator.BranchName).clear().type(`Edited Salon ${uniqueId}`);\ncy.xpath(_locator.branchlocator.UpdateBranch).click({\n  force: true\n});\n// 4.4 Delete branch\ncy.xpath(_locator.search.SearchField).clear().type(`Edited Salon ${uniqueId}`);\ncy.get(\"body\").should(\"contain.text\", `Edited Salon ${uniqueId}`);\n// Select the branch checkbox\ncy.xpath(`//tbody/tr[contains(., \"Edited Salon ${uniqueId}\")]//button[@aria-label=\"Select row\"]`).click({\n  force: true\n});\ncy.xpath('//button[normalize-space()=\"Delete\"]').should(\"be.visible\").click({\n  force: true\n});\n// cy.xpath(branchlocator.DeleteBranch).first().click({ force: true });\n// cy.wait(1000);\ncy.xpath(_locator.branchlocator.ConfirmDelete).type(\"Delete Branch\");\ncy.xpath(_locator.branchlocator.Delete).click();\ncy.xpath(_locator.search.SearchField).clear().type(BranchName, {\n  force: true\n});\ncy.get(\"body\").should(\"not.contain.text\", `Edited Salon ${uniqueId}`);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<body>' to contain text 'Beauty Salon 1789536067464', but the text was '\\n    OrganizationBranchesAnalyticsOverviewPayment ReportsExpense ReportsProduct ReportStaff PerformanceCustomer ReportAppointment ReportService ReportWallet ReportMain Skillshikshyaskilladmin@test.comCopyright © 2026 ChairlyoMorning, MainSkill Shikshya QA 02Wednesday • 31 Bhadra 2083, 11:06 AMAdd BranchesManage all studio BranchesSave ChangesCancelBranch Name*Slug*Phone*Invalid phone numberEmail*Status *ActiveInactiveActiveAddress*Timezone Use organization defaultCurrently using organization default (inherited from organization)Branch Admin DetailsCreate an admin user for this branchFirst Name*Last Name*Email*Password*Show passwordPhone*Invalid phone numberSuccessLogin successful!Form Validation ErrorPlease check the form for errors.\\n  \\n\\n'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<body>' to contain text 'Beauty Salon 1789536067464', but the text was '\\n    OrganizationBranchesAnalyticsOverviewPayment ReportsExpense ReportsProduct ReportStaff PerformanceCustomer ReportAppointment ReportService ReportWallet ReportMain Skillshikshyaskilladmin@test.comCopyright © 2026 ChairlyoMorning, MainSkill Shikshya QA 02Wednesday • 31 Bhadra 2083, 11:06 AMAdd BranchesManage all studio BranchesSave ChangesCancelBranch Name*Slug*Phone*Invalid phone numberEmail*Status *ActiveInactiveActiveAddress*Timezone Use organization defaultCurrently using organization default (inherited from organization)Branch Admin DetailsCreate an admin user for this branchFirst Name*Last Name*Email*Password*Show passwordPhone*Invalid phone numberSuccessLogin successful!Form Validation ErrorPlease check the form for errors.\\n  \\n\\n'\n    at Context.eval (webpack://chairlyo/./cypress/e2e/04_BranchLogin.cy.js:74:17)",
+                "diff": "- '\\n    OrganizationBranchesAnalyticsOverviewPayment ReportsExpense ReportsProduct ReportStaff PerformanceCustomer ReportAppointment ReportService ReportWallet ReportMain Skillshikshyaskilladmin@test.comCopyright © 2026 ChairlyoMorning, MainSkill Shikshya QA 02Wednesday • 31 Bhadra 2083, 11:06 AMAdd BranchesManage all studio BranchesSave ChangesCancelBranch Name*Slug*Phone*Invalid phone numberEmail*Status *ActiveInactiveActiveAddress*Timezone Use organization defaultCurrently using organization default (inherited from organization)Branch Admin DetailsCreate an admin user for this branchFirst Name*Last Name*Email*Password*Show passwordPhone*Invalid phone numberSuccessLogin successful!Form Validation ErrorPlease check the form for errors.\\n  \\n\\n'\n+ 'Beauty Salon 1789536067464'\n"
+              },
+              "uuid": "2fbba78d-ce92-4889-b34a-f821683ca7fc",
+              "parentUUID": "d2d2fe3d-eda7-4344-b767-9c923c2d6c3a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2fbba78d-ce92-4889-b34a-f821683ca7fc"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 26502,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
