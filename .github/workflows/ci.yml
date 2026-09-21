@@ -11,6 +11,7 @@ on:
 jobs:
   cypress:
     runs-on: ubuntu-latest
+    timeout-minutes: 50 #50 cancel-timeout-minutes
 
     steps:
       - name: Checkout repository
