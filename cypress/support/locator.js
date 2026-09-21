@@ -38,7 +38,34 @@ export const branchlocator = {
   CreateBranch: "//button[normalize-space()='Save Changes']",
   EditBranch: "//tbody/tr[2]//*[name()='svg']//*[name()='path' and contains(@d,'M12 3H5a2 ')]",
   UpdateBranch: "//button[normalize-space()='Save Changes']",
-  DeleteBranch: "//*[name()='path' and contains(@d,'M10 11v6')]",
-  ConfirmDelete: "/html[1]/body[1]/div[3]/div[3]/input[1]",
-  Delete: "Delete Branch",
+  DeleteBranch: "//div[@title='Delete branch']",
+  ConfirmDelete: '//input[@placeholder="Type Delete Branch here"]',
+  Delete: "/html[1]/body[1]/div[3]/div[4]/button[2]",
 };
+export const CustomersLocator= {
+  Management: "//button[.//span[normalize-space()='Management']]",
+  CustomerPage: "//a[normalize-space()='Customers']",
+  AddCustomer: "//button[normalize-space()='Add Customer']",
+  Firstname: "#first_name",
+  LastName: "#last_name",
+  PhoneNo: '[name="phone"]',
+  Email_id: "#email",
+  DOB: "#date_of_birth",
+  Monthdropdown: '//button[@aria-label="Choose the Nepali month"]',
+  Yeardropdown: 'button[aria-label="Choose the Nepali year"]',
+  Address: "#address",
+  Note: "#note",
+  Genderdropdown: "#radix-_r_2v_,",
+  Gender: "/html[1]/body[1]/div[7]/div[1]/div[1]/div[1]/div[3]",
+
+  CreateCustomer: "//button[normalize-space()='Save Changes']",
+
+  SearchCustomer: "//input[@placeholder='Search...']",
+  EditCustomer: "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/a[1]/*[name()='svg'][1]",
+  DeleteCustomer: "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/div[1]/*[name()='svg'][1]",
+  Type: "//input[@placeholder='Type Delete here']",
+  ConfirmDelete:"//div[@data-slot='dialog-footer']//button[@data-variant='delete']",
+  Save: "//button[normalize-space()='Save Changes']",
+
+
+}

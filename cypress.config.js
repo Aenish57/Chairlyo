@@ -26,16 +26,39 @@ dotenv.config({
 });
 
 module.exports = defineConfig({
+  // allowCypressEnv: true,
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions:{
+    reportDir: 'cypress/reports',
+    reportFilename: 'report',
+    overwrite: true,
+    html: true,
+    json: true,
+    embeddedScreenshots: true,
+    inlineAssets: true,
+  },
+  
   e2e: {
+    // baseURL: process.env.BASE_URL,
+    // env:{
+    // username: process.env.Cypress_USERNAME,
+    // password: process.env.Cypress_PASSWORD,
+    // },
     baseUrl: "https://qa02.stage.chairlyo.com",
     slowTestThreshold: 3000,
 
     setupNodeEvents(on, config) {
-      config.env.USERNAME = process.env.USERNAME;
-      config.env.PASSWORD = process.env.PASSWORD;
+  config.env.USERNAME = process.env.USERNAME;
+  config.env.PASSWORD = process.env.PASSWORD;
+  
+  config.env.BRANCH_ADMIN_EMAIL = process.env.BRANCH_ADMIN_EMAIL;
+  config.env.BRANCH_ADMIN_PASSWORD = process.env.BRANCH_ADMIN_PASSWORD;
 
-      return config;
-    },
+  require('cypress-mochawesome-reporter/plugin')(on);
+
+  return config;
+},
+    chromeWebSecurity: false,
   },
 });
 
